@@ -20,6 +20,7 @@ VITE_CURRENCY_BEACON_API_KEY=your_api_key_here
 (replace 'your_api_key_here' with yours API key you got from Currency Beacon)
 
 - start the development server with 'yarn dev'
+- open the app at: http://localhost:3000/
 
 # Assumptions and Decisions
 
