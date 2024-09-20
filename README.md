@@ -41,3 +41,5 @@ Types: Types were defined to strictly type the response from the backend, ensuri
 Translations: I did not implement internationalization or extract text strings into separate files, as this was deemed unnecessary for a project of this size.
 
 API key management: The provided API key exceeded the usage limit before I even started using it, so I used my own API key for testing purposes during programming.
+
+In addition: a test could be added to check that after mocking currency and conversion value it will correctly convert our amount to the mocked currency.
