@@ -11,13 +11,15 @@ How to run the app:
 
 - Clone the repository
 - Run 'yarn' to install dependencies
-- Create a .env file in the root directory and add the following line:
+- Create a .env file in the root directory and add the following lines:
 
 ```
 VITE_CURRENCY_BEACON_API_KEY=your_api_key_here
+VITE_CURRENCIES_HISTORY_LENGTH=5
 ```
 
 (replace 'your_api_key_here' with yours API key you got from Currency Beacon)
+(set VITE_CURRENCIES_HISTORY_LENGTH to the number of currency history items you want to have)
 
 - start the development server with 'yarn dev'
 - open the app at: http://localhost:3000/
