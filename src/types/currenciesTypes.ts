@@ -25,3 +25,10 @@ export type ConversionResult = {
   to: string;
   value: number;
 };
+
+export type CurrenciesHistoryType = {
+  fromCurrency: string;
+  toCurrency: string;
+  amount: number;
+  result: number;
+};

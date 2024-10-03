@@ -1,10 +1,17 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
-import { Currency, ShortCurrency } from '../types/currenciesTypes';
+import {
+  CurrenciesHistoryType,
+  Currency,
+  ShortCurrency,
+} from '../types/currenciesTypes';
 import { convertCurrency, getCurrencies } from '../services/currencyService';
 
 export const useCurrencyConversion = () => {
+  const [currenciesHistory, setCurrenciesHistory] = useState<
+    CurrenciesHistoryType[]
+  >([]);
   const [currencies, setCurrencies] = useState<ShortCurrency[]>([]);
   const [fromCurrency, setFromCurrency] = useState('');
   const [toCurrency, setToCurrency] = useState('');
@@ -51,6 +58,11 @@ export const useCurrencyConversion = () => {
           amount
         );
         const { value } = conversionResult;
+
+        setCurrenciesHistory([
+          { fromCurrency, toCurrency, amount, result: value },
+          ...currenciesHistory,
+        ]);
         setResult(value);
       } catch (e) {
         setError('Failed to convert currency. Try again later!');
@@ -70,6 +82,7 @@ export const useCurrencyConversion = () => {
   }, [convert, debouncedConvert]);
 
   return {
+    currenciesHistory,
     currencies,
     fromCurrency,
     toCurrency,

@@ -4,9 +4,11 @@ import AmountInput from './AmountInput';
 import Loading from './Loading';
 import Error from './Error';
 import ConvertedValue from './ConvertedValue';
+import CurrenciesHistory from './CurrenciesHistory';
 
 const CurrencyConverter = () => {
   const {
+    currenciesHistory,
     currencies,
     fromCurrency,
     toCurrency,
@@ -46,6 +48,8 @@ const CurrencyConverter = () => {
         />
       )}
       {error && <Error errorMessage={error} />}
+      <p>History:</p>
+      <CurrenciesHistory currenciesHistory={currenciesHistory.reverse()} />
     </div>
   );
 };
