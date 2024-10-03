@@ -49,7 +49,7 @@ const CurrencyConverter = () => {
       )}
       {error && <Error errorMessage={error} />}
       <p>History:</p>
-      <CurrenciesHistory currenciesHistory={currenciesHistory.reverse()} />
+      <CurrenciesHistory currenciesHistory={currenciesHistory} />
     </div>
   );
 };
